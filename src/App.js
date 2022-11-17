@@ -11,8 +11,8 @@ function App() {
     { name: "Python", level: 2 },
   ])
 
-const [newSkill, setNewSkill] = useState()
-const [newLevel, setNewLevel] = useState()
+const [newSkill, setNewSkill] = useState('')
+const [newLevel, setNewLevel] = useState(1)
 
 const handleSkillChange = (event) => {
 setNewSkill (event.target.value)
@@ -35,14 +35,14 @@ setNewSkill('')
       {skills.map(skill => (
         <SkillList 
         key={skill.name} name={skill.name}
-        key={skill.level} level={skill.level}
+        level={skill.level}
         />))}
       <hr></hr> 
    <form className='NewSkillForm' onSubmit={handleAddSkill}>
         <label>Skill</label>
         <input value={newSkill} onChange={handleSkillChange} required></input>
-        <label value={newLevel} onChange={handleLevelChange}>Level</label>
-        <select>
+        <label>Level</label>
+        <select value={newLevel} onChange={handleLevelChange}>
           <option value={1}>LEVEL 1</option>
           <option value={2}>LEVEL 2</option>
           <option value={3}>LEVEL 3</option>

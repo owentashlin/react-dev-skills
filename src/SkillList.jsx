@@ -3,9 +3,9 @@ import './SkillsList.css'
 function SkillList({name, level}){
     return (
         <>
-            <ul class='SkillListItem'>
+            <ul className='SkillListItem'>
             <li>{name}</li> 
-            <li class='level'>LEVEL {level}</li>
+            <li className='level'>LEVEL {level}</li>
             </ul>
         </>
     )
